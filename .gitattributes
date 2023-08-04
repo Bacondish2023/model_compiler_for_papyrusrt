@@ -1,0 +1,22 @@
+*	text=auto
+
+# source code
+*.c	text
+*.h	text
+*.cpp	text
+*.hpp	text
+
+# papyrus-rt model
+*.di	text
+*.notation	text
+*.uml	text
+
+*.md	text
+
+*.jpg	binary
+*.png	binary
+
+*.pdf	binary
+
+*.bat	text
+*.sh	text
