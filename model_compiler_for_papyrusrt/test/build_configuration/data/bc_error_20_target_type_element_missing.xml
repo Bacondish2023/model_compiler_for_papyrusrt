@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfiguration version="1.0">
+    <targetName>AliceAndBob</targetName>
+    <!-- <targetType/> -->
+    <topCapsuleName>TopAliceAndBob</topCapsuleName>
+    <modelFile>model/Sample.uml</modelFile>
+    <sources>
+        <source>TopAliceAndBob</source>
+        <source>Alice</source>
+        <source>Bob</source>
+        <source>AliceAndBobProtocol</source>
+    </sources>
+    <controllerSetting/>
+    <includeDirectories/>
+    <compileArgument/>
+    <libraries/>
+    <libraryDirectories/>
+    <linkArgument/>
+    <userDeclarationPreface/>
+    <userDeclarationBeforeTarget/>
+    <userDeclarationAfterTarget/>
+    <userDeclarationEnding/>
+</buildConfiguration>

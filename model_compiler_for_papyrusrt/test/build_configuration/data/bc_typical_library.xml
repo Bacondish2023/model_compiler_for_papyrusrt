@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfiguration version="1.0">
+    <targetName>libfoo</targetName>
+    <targetType>library</targetType>
+    <topCapsuleName>Top</topCapsuleName>
+    <modelFile>model/Sample.uml</modelFile>
+    <sources>
+        <source>Top</source>
+    </sources>
+    <controllerSetting/>
+    <includeDirectories/>
+    <compileArgument/>
+    <libraries/>
+    <libraryDirectories/>
+    <linkArgument/>
+    <userDeclarationPreface/>
+    <userDeclarationBeforeTarget/>
+    <userDeclarationAfterTarget/>
+    <userDeclarationEnding/>
+</buildConfiguration>

@@ -1,0 +1,33 @@
+name: SmokeTest
+
+on: [push]
+
+jobs:
+  SmokeTest:
+    strategy:
+      matrix:
+        platform: [windows-latest, ubuntu-20.04]
+        python-version: ['3.6.8', '3.8', '3.9', '3.10', '3.11']
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Checkout VCS
+        uses: actions/checkout@v3
+
+      - name: Setup Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Unit Test
+        run: python -m unittest
+        working-directory: model_compiler_for_papyrusrt
+
+      - name: Installation
+        run: python setup.py install
+        working-directory: model_compiler_for_papyrusrt
+
+      - name: Installation Test (1/2)
+        run: python -m model_compiler_for_papyrusrt --help
+
+      - name: Installation Test (2/2)
+        run: python -m model_compiler_for_papyrusrt.misc.dummy_cmakelists_generator --help

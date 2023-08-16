@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfiguration version="1.0">
+    <targetName>Foo</targetName>
+    <targetType>executable</targetType>
+    <topCapsuleName>Top</topCapsuleName>
+    <modelFile>model/Sample.uml</modelFile>
+    <sources>
+        <source>Top</source>
+        <source>Foo</source>
+        <source>Bar</source>
+    </sources>
+    <controllerSetting/>
+    <includeDirectories>
+        <includeDirectory>src</includeDirectory>
+    </includeDirectories>
+    <compileArgument/>
+    <libraries>
+        <library>libumlrts</library>
+    </libraries>
+    <libraryDirectories/>
+    <linkArgument/>
+    <userDeclarationPreface/>
+    <userDeclarationBeforeTarget/>
+    <userDeclarationAfterTarget/>
+    <userDeclarationEnding/>
+</buildConfiguration>

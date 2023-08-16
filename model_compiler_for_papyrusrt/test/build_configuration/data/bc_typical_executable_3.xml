@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfiguration version="1.0">
+    <targetName>AliceAndBob</targetName>
+    <targetType>executable</targetType>
+    <topCapsuleName>TopAliceAndBob</topCapsuleName>
+    <modelFile>model/Sample.uml</modelFile>
+    <sources>
+        <source>TopAliceAndBob</source>
+        <source> </source>  <!-- None -->
+        <source></source>   <!-- None -->
+        <source/>           <!-- None -->
+    </sources>
+    <controllerSetting/>
+    <includeDirectories>
+        <includeDirectory>src</includeDirectory>
+        <includeDirectory> </includeDirectory>  <!-- None -->
+        <includeDirectory></includeDirectory>   <!-- None -->
+        <includeDirectory/>                     <!-- None -->
+    </includeDirectories>
+    <compileArgument> </compileArgument>        <!-- None -->
+    <libraries>
+        <library>libumlrts</library>
+        <library> </library>                    <!-- None -->
+        <library></library>                     <!-- None -->
+        <library/>                              <!-- None -->
+    </libraries>
+    <libraryDirectories>
+        <libraryDirectory>src</libraryDirectory>
+        <libraryDirectory> </libraryDirectory>  <!-- None -->
+        <libraryDirectory></libraryDirectory>   <!-- None -->
+        <libraryDirectory/>                     <!-- None -->
+    </libraryDirectories>
+    <linkArgument> </linkArgument>              <!-- None -->
+    <userDeclarationPreface/>                   <!-- None -->
+    <userDeclarationBeforeTarget/>              <!-- None -->
+    <userDeclarationAfterTarget/>               <!-- None -->
+    <userDeclarationEnding/>                    <!-- None -->
+</buildConfiguration>

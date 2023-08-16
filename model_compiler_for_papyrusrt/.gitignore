@@ -1,0 +1,7 @@
+# Python cache
+__pycache__/
+
+# Temporary directory. Created by Python setuptools.
+build/
+dist/
+model_compiler_for_papyrusrt.egg-info/
