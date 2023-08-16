@@ -4,7 +4,7 @@
 from setuptools import setup
 
 setup(  name = 'model_compiler_for_papyrusrt',
-        version = '0.0.1',
+        version = '1.0.0',
         description = 'A build tool for projects using Papyrus-RT.',
         url='https://github.com/Bacondish2023/model_compiler_for_papyrusrt',
         author = 'Hidekazu TAKAHASHI',
