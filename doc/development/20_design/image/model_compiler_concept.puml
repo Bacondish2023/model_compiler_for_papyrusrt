@@ -1,0 +1,95 @@
+@startuml
+
+title Concept of the Model Compiler for Papyrus-RT
+
+database "Papyrus-RT Model(Model.uml)" as model
+
+folder "Build Configuration" {
+    file "Top Build Configuration(xml)" as tbc
+    file "Target-Specific Build Configuration(Foo.xml)" as bc_foo
+    file "Target-Specific Build Configuration(Bar.xml)" as bc_bar
+
+    note bottom of bc_foo
+    TargetName: <b>Foo</b>
+    TargetType: <b>executable</b>
+    TopCapsuleName: <b>TopFoo</b>
+    ModelFile: <b>Model.uml</b>
+    Sources: <b>TopFoo</b>, <b>Foo</b>
+    IncludeDirectories:
+    CompileArgument:
+    Libraries: <b>libumlrts</b>
+    LibraryDirectories:
+    LinkArgument:
+    end note
+
+    note bottom of bc_bar
+    TargetName: <b>Bar</b>
+    TargetType: <b>executable</b>
+    TopCapsuleName: <b>TopBar</b>
+    ModelFile: <b>Model.uml</b>
+    Sources: <b>TopBar</b>, <b>Bar</b>
+    IncludeDirectories:
+    CompileArgument:
+    Libraries: <b>libumlrts</b>
+    LibraryDirectories:
+    LinkArgument:
+    end note
+
+    tbc -down-> bc_foo: "refer"
+    tbc -down-> bc_bar: "refer"
+}
+
+rectangle "Model Compiler" as model_compiler #OrangeRed
+
+folder "Codegen Directory" as codegen_dir {
+
+    file "Top CMakeLists(CMakeLists.txt)" as cmake_top
+
+    folder "Foo" {
+        file "Target-Specific CMakeLists(CMakeLists.txt)" as cmake_foo
+        collections "Source Codes" as sources_foo
+
+        note bottom of cmake_foo
+        <b>add_executable</b>( <b>Foo</b>
+            <b>TopFoo</b>.cc
+            <b>TopFoo</b>Main.cc
+            <b>TopFoo</b>Controllers.cc
+            <b>Foo</b>.cc
+        )
+
+        target_link_libraries( <b>Foo</b>
+            PRIVATE
+                <b>libumlrts</b>
+        )
+        end note
+    }
+
+    folder "Bar" {
+        file "Target-Specific CMakeLists(CMakeLists.txt)" as cmake_bar
+        collections "Source Codes" as sources_bar
+
+        note bottom of cmake_bar
+        <b>add_executable</b>( <b>Bar</b>
+            <b>TopBar</b>.cc
+            <b>TopBar</b>Main.cc
+            <b>TopBar</b>Controllers.cc
+            <b>Bar</b>.cc
+        )
+
+        target_link_libraries( <b>Bar</b>
+            PRIVATE
+                <b>libumlrts</b>
+        )
+        end note
+    }
+
+    cmake_top -down-> cmake_foo: "CMake subdrectory"
+    cmake_top -down-> cmake_bar: "CMake subdrectory"
+
+}
+
+model -down-> model_compiler
+tbc -right-> model_compiler
+model_compiler -right-> codegen_dir
+
+@enduml

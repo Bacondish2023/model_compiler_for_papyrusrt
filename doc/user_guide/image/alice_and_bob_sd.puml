@@ -1,0 +1,12 @@
+@startuml
+
+title Sequence Diagram of AliceAndBob
+
+loop
+    Alice -> Bob: AliceAndBobProtocol::hello()
+    Alice <- Bob: AliceAndBobProtocol::helloReply()
+
+    Alice -> Alice: Wait 1 second
+end
+
+@enduml

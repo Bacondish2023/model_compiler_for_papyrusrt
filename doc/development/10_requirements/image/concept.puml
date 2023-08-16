@@ -1,0 +1,26 @@
+@startuml
+
+title Concept
+
+database "Papyrus-RT Model" as model
+rectangle "Build Configuration" as bc
+rectangle "Model Compiler" as model_compiler #OrangeRed
+
+folder "codegen_dir" as codegen_dir {
+
+    file "CMakeLists.txt" as cmake_codegen
+    collections "Source codes" as sources
+}
+
+file "User's build script or by hand" as user_build_script
+file "Project-Top CMakeLists.txt" as project_top_cmake
+
+model -down-> model_compiler: input
+bc -right-> model_compiler: input
+model_compiler -right-> codegen_dir: generate
+
+user_build_script -right-> project_top_cmake: invoke
+model_compiler <-down- project_top_cmake: invoke
+codegen_dir <-down- project_top_cmake: add_subdirectory()
+
+@enduml

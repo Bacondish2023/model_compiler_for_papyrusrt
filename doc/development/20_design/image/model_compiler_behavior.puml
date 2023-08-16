@@ -1,0 +1,44 @@
+@startuml
+
+title Behavior of the Model Compiler for Papyrus-RT
+
+start
+
+:Load top build configuration
+Load target-specific build configurations;
+
+if (Is generation required?) then (yes)
+
+    note right
+    The "Is generation required?" condition is
+    * Top CMakeLists does not exist
+    * Top build configuration is newer than top CMakeLists
+    (Bullets are joined with "or")
+    end note
+
+    :Generate top CMakeLists;
+else (no)
+endif
+
+while (For-each target-specific build configurations)
+
+    if (Is generation required?) then (yes)
+
+        note right
+        The "Is generation required?" condition is
+        * Target-specific CMakeLists does not exist
+        * "Model file newer is than target-specific CMakeLists"
+          or "Target-specific build configuration is newer than target-specific CMakeLists"
+        (Bullets are joined with "or")
+        end note
+
+        :Perform codegen with Papyrus-RT standalone code generator
+        Generate target-specific CMakeLists;
+    else (no)
+    endif
+
+endwhile
+
+end
+
+@enduml

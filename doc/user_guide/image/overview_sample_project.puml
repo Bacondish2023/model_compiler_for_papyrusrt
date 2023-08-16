@@ -1,0 +1,35 @@
+@startuml
+
+title Overview of Sample Project
+
+database "Model(Sample.uml)" as model
+rectangle "Build Configuration" as bc
+rectangle "Model Compiler" as model_compiler #OrangeRed
+
+folder "zzz_codegen" as codegen_dir
+
+note top of codegen_dir
+In the step 1.1, this directory is initialized
+(This directory and its CMakeLists.txt are created).
+This step is needed before first invocation of CMake
+because CMake expects that this directory exists.
+end note
+
+file "Makefile(Project Top)" as project_top_makefile
+
+file "CMakeLists.txt(Project Top)" as project_top_cmake
+
+note bottom of project_top_cmake
+A custom target "model_compile" defined.
+end note
+
+model -down-> model_compiler: "(3.1.2)input"
+bc -right-> model_compiler: "(3.1.1)input"
+model_compiler -right-> codegen_dir: "(1.1)init / (3.1.3)generate"
+
+project_top_makefile -right-> project_top_cmake: "(2)cmake / (3)model_compile / (4)rebuild_cache"
+project_top_makefile -up-> model_compiler: "(1)init codegen directory"
+project_top_cmake -up-> model_compiler: "(3.1)model-compile"
+project_top_cmake -up-> codegen_dir: "(2.1)add_subdirectory() / (4.1)add_subdirectory()"
+
+@enduml

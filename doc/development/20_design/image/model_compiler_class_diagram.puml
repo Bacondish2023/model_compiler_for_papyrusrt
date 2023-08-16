@@ -1,0 +1,88 @@
+@startuml
+
+title Class Diagram of the Model Compiler for Papyrus-RT
+
+class Application {
+    +__init__()
+    +__del__()
+    +main(project_root_dir : str, codegen_dir : str, path_to_tbc : str)
+    -- Responsibility --
+    * Create instances of other classes and create structure between instances
+    * Perform application behavior
+}
+
+class TopGenerator {
+    +__init__(configuration : TopBuildConfiguration, project_root_dir : str, codegen_dir : str, target_names : str)
+    +generateIfRequired()
+}
+
+class TopCMakeListsGenerator {
+    +__init__(destination_dir : str, target_names : list(str))
+    +generate()
+}
+
+class TargetSpecificGenerator {
+    +__init__(configuration : BuildConfiguration, project_root_dir : str, codegen_dir : str, papyrusrt_root_dir : str, use_stub : bool)
+    +generateIfRequired()
+}
+
+class PapyrusrtCodegenWrapper {
+    +__init__(plugin_dir : str, java_command : str)
+    +generate(model_path : str, top_capsule : str, out_dir : str, log_level : str, enable_stack_trace : bool)
+    -- Responsibility --
+    * Wrap Papyrus-RT standalone code generator
+    -- Misc --
+    * Stub implementation "PapyrusrtCodegenWrapperStub" is also available
+}
+
+class TargetSpecificCMakeListsGenerator {
+    +__init__(destination_dir : str, configuration : BuildConfiguration, source_files : list(str))
+    +generate()
+}
+
+class TopBuildConfiguration {
+    +__init__(path : str)
+    +get_path_to_configuration_file() : str
+    +get_version_string() : str
+    +get_references_in_relative_path() : list(str)
+    +get_references_in_absolute_path() : list(str)
+    -- Responsibility --
+    * Parse top build configuration
+    * Provide interface to get items on top build configuration
+}
+
+class BuildConfiguration {
+    +__init__(path : str)
+    +get_path_to_configuration_file() : str
+    +get_version_string() : str
+    +get_target_name() : str
+    +get_target_type() : str
+    +get_top_capsule_name() : str
+    +get_model_file() : str
+    +get_sources() : list(str)
+    +get_include_directories() : list(str)
+    +get_compile_argument() : str
+    +get_libraries() : list(str)
+    +get_library_directories() : list(str)
+    +get_link_argument() : str
+    +get_user_declaration_preface() str
+    +get_user_declaration_before_target() : str
+    +get_user_declaration_after_target() : str
+    +get_user_declaration_ending() : str
+    -- Responsibility --
+    * Parse target-specific build configuration
+    * Provide interface to get items on target-specific build configuration
+}
+
+Application o-down-> TopGenerator
+Application o-down-> TargetSpecificGenerator
+
+TopGenerator o-down-> TopBuildConfiguration
+TopGenerator o-down-> TopCMakeListsGenerator
+
+TargetSpecificGenerator o-down-> BuildConfiguration
+TargetSpecificGenerator o-down-> PapyrusrtCodegenWrapper
+TargetSpecificGenerator o-down-> TargetSpecificCMakeListsGenerator
+TargetSpecificCMakeListsGenerator o-right-> BuildConfiguration
+
+@enduml

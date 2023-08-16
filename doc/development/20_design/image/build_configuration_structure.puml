@@ -1,0 +1,12 @@
+@startuml
+
+title Build Configuration Structure
+
+folder "Build Configuration" {
+    file "Top Build Configuration" as tbc
+    collections "Target-Specific Build Configurations" as bc
+
+    tbc -right-> bc: "1   refer   0..*"
+}
+
+@enduml
