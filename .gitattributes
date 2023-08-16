@@ -12,6 +12,7 @@
 *.uml	text
 
 *.md	text
+LICENSE	text
 
 *.jpg	binary
 *.png	binary

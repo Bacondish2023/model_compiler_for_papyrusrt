@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topBuildConfiguration version="1.0">
+    <reference relativePath="AliceAndBob/AliceAndBob.xml"/>
+    <reference relativePath="libAliceAndBobProxy/libAliceAndBobProxy.xml"/>
+    <reference relativePath="AliceAndBobWithProxy/AliceAndBobWithProxy.xml"/>
+    <reference relativePath="AliceAndBobWithThreads/AliceAndBobWithThreads.xml"/>
+    <reference relativePath="SimpleClasses/SimpleClasses.xml"/>
+</topBuildConfiguration>

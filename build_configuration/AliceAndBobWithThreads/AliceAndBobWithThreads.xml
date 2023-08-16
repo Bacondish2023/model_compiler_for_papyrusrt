@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfiguration version="1.0">
+    <targetName>AliceAndBobWithThreads</targetName>
+    <targetType>executable</targetType>
+    <topCapsuleName>TopAliceAndBob</topCapsuleName>
+    <modelFile>model/Sample.uml</modelFile>
+    <sources>
+        <source>TopAliceAndBob</source>
+        <source>Alice</source>
+        <source>Bob</source>
+        <source>AliceAndBobProtocol</source>
+    </sources>
+    <controllerSetting>
+TopAliceAndBob = MainThread
+TopAliceAndBob.alice = AliceThread
+TopAliceAndBob.bob = BobThread
+</controllerSetting>
+    <includeDirectories>
+        <includeDirectory>src</includeDirectory>
+    </includeDirectories>
+    <compileArgument>-DNEED_NON_FLEXIBLE_ARRAY</compileArgument>
+    <libraries>
+        <library>libumlrts</library>
+    </libraries>
+    <libraryDirectories/>
+    <linkArgument/>
+    <userDeclarationPreface/>
+    <userDeclarationBeforeTarget/>
+    <userDeclarationAfterTarget/>
+    <userDeclarationEnding>
+if (UNIX)
+    target_link_libraries(
+        AliceAndBobWithThreads
+        PRIVATE
+            pthread
+    )
+elseif (MSVC)
+    target_link_libraries(
+        AliceAndBobWithThreads
+        PRIVATE
+            ws2_32.lib
+    )
+endif ()
+</userDeclarationEnding>
+</buildConfiguration>

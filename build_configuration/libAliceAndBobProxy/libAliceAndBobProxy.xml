@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfiguration version="1.0">
+    <targetName>libAliceAndBobProxy</targetName>
+    <targetType>library</targetType>
+    <topCapsuleName>TopAliceAndBobProxy</topCapsuleName>
+    <modelFile>model/Sample.uml</modelFile>
+    <sources>
+        <source>TopAliceAndBobProxy</source>
+        <source>AbstractAliceAndBobProxyInterface</source>
+        <source>AliceAndBobProxyBaseInterface</source>
+        <source>AliceAndBobProxyConjugateInterface</source>
+        <source>AliceAndBobProtocol</source>
+    </sources>
+    <controllerSetting/>
+    <includeDirectories>
+        <includeDirectory>src</includeDirectory>
+        <includeDirectory>${UMLRTS_INCLUDE_DIRS}</includeDirectory>
+    </includeDirectories>
+    <compileArgument>-DNEED_NON_FLEXIBLE_ARRAY</compileArgument>
+    <libraries/>
+    <libraryDirectories/>
+    <linkArgument/>
+    <userDeclarationPreface/>
+    <userDeclarationBeforeTarget/>
+    <userDeclarationAfterTarget/>
+    <userDeclarationEnding/>
+</buildConfiguration>

@@ -35,14 +35,14 @@ I hope that there is command-line code generation feature on Papyrus-RT for deve
 #### Supported Platform
 
 * Linux
-* Windows
-* Mac OS? (not tested)
+* Windows(MSVC)
 
 #### Required Software
 
-* Papyrus-RT
-* CMake
-* Python 3
+* **Papyrus-RT**
+* **Python 3** 3.6.8 or above
+* **CMake** 3.17 or above
+* And toolchain which can build C++ source code
 
 ## How to Use
 
@@ -54,4 +54,11 @@ Under construction
 
 ## License
 
-Under construction
+Copyright 2023 [Hidekazu TAKAHASHI](https://github.com/Bacondish2023).
+The Model Compiler for Papyrus-RT is free and open-source software licensed
+under the **Eclipse Public License 1.0**.
+
+The Model Compiler for Papyrus-RT includes following derived work.
+
+ * **papyrusrt_codegen_wrapper.py** is derived from
+   **umlrtgen.sh** which is available in the Papyrus-RT and licensed under the EPL 1.0.
