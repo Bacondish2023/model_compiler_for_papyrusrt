@@ -3,7 +3,7 @@ name: SmokeTest
 on: [push]
 
 jobs:
-  SmokeTest:
+  UnitTest:
     strategy:
       matrix:
         platform: [windows-latest, ubuntu-20.04]
@@ -31,3 +31,37 @@ jobs:
 
       - name: Installation Test (2/2)
         run: python -m model_compiler_for_papyrusrt.misc.dummy_cmakelists_generator --help
+
+  ExampleProjectTest:
+    strategy:
+      matrix:
+        platform: [windows-latest, ubuntu-20.04]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Checkout VCS
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+
+      - name: Setup MSVC
+        if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@v1
+
+      - name: Setup Papyrus-RT
+        uses: Bacondish2023/setup-papyrusrt@v1
+        with:
+          papyrusrt-version: 1.0.0
+
+      - name: Build Test
+        if: (runner.os == 'Linux') || (runner.os == 'macOs')
+        run:    |
+                make
+
+      - name: Build Test
+        if: runner.os == 'Windows'
+        run:    |
+                (Get-Content Makefile) -replace "Unix Makefiles", "NMake Makefiles" | Set-Content Makefile
+                nmake
