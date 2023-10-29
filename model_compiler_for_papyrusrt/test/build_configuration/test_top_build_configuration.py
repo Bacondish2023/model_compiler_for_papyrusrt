@@ -16,7 +16,7 @@ class TestTopBuildConfiguration(unittest.TestCase):
 
 
     def test_typical_1(self):
-        reference_expected = ['AliceAndBob.xml', 'SampleNode.xml']
+        reference_expected = ['AliceAndBob.xml', 'ExampleNode.xml']
         obj = top_build_configuration.TopBuildConfiguration(self.__data_dir + os.sep + 'tbc_typical.xml')
         reference_result = obj.get_references_in_relative_path()
 

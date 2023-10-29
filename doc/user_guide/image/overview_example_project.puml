@@ -1,8 +1,8 @@
 @startuml
 
-title Overview of Sample Project
+title Overview of Example Project
 
-database "Model(Sample.uml)" as model
+database "Model(Example.uml)" as model
 rectangle "Build Configuration" as bc
 rectangle "Model Compiler" as model_compiler #OrangeRed
 

@@ -286,7 +286,7 @@ Typical target-specific build configuration is below.
     <targetName>AliceAndBob</targetName>
     <targetType>executable</targetType>
     <topCapsuleName>TopAliceAndBob</topCapsuleName>
-    <modelFile>model/Sample.uml</modelFile>
+    <modelFile>model/Example.uml</modelFile>
     <sources>
         <source>TopAliceAndBob</source>
         <source>Alice</source>

@@ -1,11 +1,11 @@
 # How to Integrate the Model Compiler for Papyrus-RT into Your Project
 
-In this document, let's learn about integration using sample project as an exmaple.
+In this document, let's learn about integration using exmaple project as an exmaple.
 
 ## Overview
 
 Let's see a diagram below.
-It is overview of sample project on this repository about model-compile
+It is overview of exmaple project on this repository about model-compile
 which includes codegen and build script generation.
 Compile and link(ordinary build) are not included in the diagram.
 
@@ -13,7 +13,7 @@ Arrows mean invocation or data flow.
 And leading numbers on arrow mean order of happen.
 (1)->(1.1)->(2)->(2.1) ...
 
-![Behavior](image/overview_sample_project.png)
+![Behavior](image/overview_example_project.png)
 
 This repository integrates the Model Compiler for Papyrus-RT
 using 2 build scripts, **Makefile(Project Top)** and **CMakeLists.txt(Project Top)**.
@@ -49,9 +49,9 @@ $(CODEGEN_DIR):
 
 **CMakeLists.txt(Project Top)** is responsible for followings
 
-* Build settings over the sample project
+* Build settings over the exmaple project
 * Custom targets definition: User can define targets which is outside of model
-    * In sample project, target of Runtime Service(RTS) library defined using libumlrts.cmake
+    * In exmaple project, target of Runtime Service(RTS) library defined using libumlrts.cmake
 * Model-compile target definition which invokes the Model Compiler for Papyrus-RT
 * `add_subdirectory()` to codegen directory
 
@@ -66,7 +66,7 @@ Succeeding sections explains some key points.
 Installation is recommended for the Model Compiler for Papyrus-RT integration
 into project outside of this repository.
 Because installed one can be invoked independently against current directory.
-(You don't have to install for trying sample project on this repository.)
+(You don't have to install for trying exmaple project on this repository.)
 
 Let's type following to install.
 
@@ -134,13 +134,13 @@ Empty target-specific build configuration(AliceAndBob.xml)
 ```
 
 Let's fill the target-specific build configuration using AliceAndBob project as an example.
-(AliceAndBob is sample project on this repository)
+(AliceAndBob is exmaple project on this repository)
 
 targetName is **AliceAndBob**  
 targetType is **executable**  
 
 modelFile is path to model file from project top directory.
-Assume it is **model/Sample.uml**
+Assume it is **model/Example.uml**
 
 AliceAndBob project has following elements.
 These elements are needed to be listed as sources/source
@@ -160,7 +160,7 @@ Target-specific build configuration will be following
     <targetName>AliceAndBob</targetName>
     <targetType>executable</targetType>
     <topCapsuleName>TopAliceAndBob</topCapsuleName>
-    <modelFile>model/Sample.uml</modelFile>
+    <modelFile>model/Example.uml</modelFile>
     <sources>
         <source>TopAliceAndBob</source>
         <source>Alice</source>
@@ -247,7 +247,7 @@ Finished target-specific build configuration will be following.
     <targetName>AliceAndBob</targetName>
     <targetType>executable</targetType>
     <topCapsuleName>TopAliceAndBob</topCapsuleName>
-    <modelFile>model/Sample.uml</modelFile>
+    <modelFile>model/Example.uml</modelFile>
     <sources>
         <source>TopAliceAndBob</source>
         <source>Alice</source>

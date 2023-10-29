@@ -23,7 +23,7 @@ class TestBuildConfiguration(unittest.TestCase):
         self.assertEqual('AliceAndBob', obj.get_target_name())
         self.assertEqual('executable', obj.get_target_type())
         self.assertEqual('TopAliceAndBob', obj.get_top_capsule_name())
-        self.assertEqual('model/Sample.uml', obj.get_model_file())
+        self.assertEqual('model/Example.uml', obj.get_model_file())
 
         expected_sources = [
             'TopAliceAndBob',
@@ -97,7 +97,7 @@ endif ()
         self.assertEqual('AliceAndBob', obj.get_target_name())
         self.assertEqual('executable', obj.get_target_type())
         self.assertEqual('TopAliceAndBob', obj.get_top_capsule_name())
-        self.assertEqual('model/Sample.uml', obj.get_model_file())
+        self.assertEqual('model/Example.uml', obj.get_model_file())
 
         expected_sources = [
             'TopAliceAndBob',
@@ -127,7 +127,7 @@ endif ()
         self.assertEqual('AliceAndBob', obj.get_target_name())
         self.assertEqual('executable', obj.get_target_type())
         self.assertEqual('TopAliceAndBob', obj.get_top_capsule_name())
-        self.assertEqual('model/Sample.uml', obj.get_model_file())
+        self.assertEqual('model/Example.uml', obj.get_model_file())
 
         expected_sources = [
             'TopAliceAndBob',
@@ -165,7 +165,7 @@ endif ()
         self.assertEqual('libfoo', obj.get_target_name())
         self.assertEqual('library', obj.get_target_type())
         self.assertEqual('Top', obj.get_top_capsule_name())
-        self.assertEqual('model/Sample.uml', obj.get_model_file())
+        self.assertEqual('model/Example.uml', obj.get_model_file())
 
         expected_sources = [
             'Top',

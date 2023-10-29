@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17) # "rm" in CMake Command-Line Tool
-project(hdk_papyrusrt_sample)
+project(Example)
 
 ##################################################
 # platform settings

@@ -16,7 +16,7 @@ And it generates source codes and CMake build scripts.
 (Codegen functionality uses Papyrus-RT's standalone code generator.)
 
 This project has implementation of the Model Compiler for Papyrus-RT,
-and sample project(you can build and run).
+and example project(you can build and run).
 
 ## Motivation
 
@@ -46,11 +46,11 @@ I hope that there is command-line code generation feature on Papyrus-RT for deve
 * **Python 3** 3.6.8 or above
 * **CMake** 3.17 or above
 * And toolchain which can build C++ source code
-    * **GNU Make** (Sample project depends it. The Model Compiler for Papyrus-RT itself does not depends.)
+    * **GNU Make** (Example project depends it. The Model Compiler for Papyrus-RT itself does not depends.)
 
 ## How to Use
 
-#### How to Try Sample Project
+#### How to Try Example Project
 
 ###### Step 1: Settings
 
@@ -83,7 +83,7 @@ On Papyrus-RT, let's operation followings.
 1. Select "Open Projects from File System..." (Wizard appears)
 1. Select model directory on the wizard
 1. Click "Finish" button on the wizard(The wizard disappears)
-1. Double-click "Sample" on Project Explorer
+1. Double-click "Example" on Project Explorer
 
 ![How to Open Model](doc/user_guide/image/how_to_open_model.png)
 
@@ -102,7 +102,7 @@ make
 
 ###### Misc: Explanation of AliceAndBob
 
-AliceAndBob is one of executables in sample project and executed in step 4.
+AliceAndBob is one of executables in example project and executed in step 4.
 Capsules "Alice" and "Bob" send messages each other.
 Sequence diagram of the AliceAndBob is below.
 
@@ -111,21 +111,21 @@ Sequence diagram of the AliceAndBob is below.
 
 #### The Others
 
-* [Sample project explanation](doc/user_guide/sample_project_explanation.md)
+* [Example project explanation](doc/user_guide/example_project_explanation.md)
 * [How to integrate the Model Compiler for Papyrus-RT into your project](doc/user_guide/how_to_integrate_the_model_compiler.md)
 
 ## Directory Structure
 
 ```
-+---build_configuration             Build configuration of the sample project
++---build_configuration             Build configuration of the example project
 +---doc                             Documents
-+---model                           Model of the sample project
++---model                           Model of the example project
 +---model_compiler_for_papyrusrt    Impelementation of the Model Compiler for Papyrus-RT
 +---zzz_build                       [Temporary Directory]
-|                                   Build directory of the sample project.
+|                                   Build directory of the example project.
 |                                   Deliverables such as executables, libraries are created here.
 +---zzz_codegen                     [Temporary Directory]
-|                                   Codegen directory of the sample project.
+|                                   Codegen directory of the example project.
 |                                   Codes and build scripts are generated here.
 \---zzz_workspace                   [Temporary Directory]
                                     Papyrus-RT's workspace.

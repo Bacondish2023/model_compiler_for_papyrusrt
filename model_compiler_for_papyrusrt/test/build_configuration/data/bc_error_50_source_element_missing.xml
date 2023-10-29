@@ -3,7 +3,7 @@
     <targetName>AliceAndBob</targetName>
     <targetType>executable</targetType>
     <topCapsuleName>TopAliceAndBob</topCapsuleName>
-    <modelFile>model/Sample.uml</modelFile>
+    <modelFile>model/Example.uml</modelFile>
     <sources>
     </sources>
     <controllerSetting/>

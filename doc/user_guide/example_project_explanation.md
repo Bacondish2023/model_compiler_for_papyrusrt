@@ -1,4 +1,4 @@
-# Sample Project Explanation
+# Example Project Explanation
 
 ## AliceAndBob
 
@@ -9,7 +9,7 @@ This is explained on top-level README.md.
 
 Alice and Bob send messages through proxies.
 The proxies transfer messages with file which is one of inter-process communication method.
-(In this sample project, there is no pros because all capsule instances run on same process.)
+(In this example project, there is no pros because all capsule instances run on same process.)
 
 The following is a composite structure diagram(drawing of files is added with image editor).
 
