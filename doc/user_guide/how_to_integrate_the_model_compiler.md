@@ -71,8 +71,7 @@ Because installed one can be invoked independently against current directory.
 Let's type following to install.
 
 ```sh
-cd [root of this project]/model_compiler_for_papyrusrt/
-python setup.py install
+pip install model_compiler_for_papyrusrt
 ```
 
 Let's type following to check installation.
